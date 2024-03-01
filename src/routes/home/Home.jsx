@@ -2,7 +2,6 @@ import React from 'react';
 import { Box, Grid } from '@mui/material';
 
 import Note from '../../components/note/note';
-import Navbar from '../../components/navbar/navbar'
 
 const dummyNotes = [
   { id: 1, title: 'Note 1', content: 'This is the content of note 1.' },
@@ -16,7 +15,6 @@ const dummyNotes = [
 const Home = () => {
   return (
     <>
-      {/* <Navbar/> */}
       <Box sx={{ flexGrow: 1, p: 3 }}>
       <Grid container spacing={2}>
         {dummyNotes.map((note) => (

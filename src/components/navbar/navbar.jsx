@@ -19,8 +19,12 @@ const Navbar = () => {
         navigate('/signin');
     }
 
+    const handleClick = () => {
+      navigate('/')
+    }
+
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{ bgcolor: '#efde78' }}>
       <Toolbar sx={{ justifyContent: 'space-between' }}>
         {/* Search Box */}
         <TextField
@@ -37,12 +41,12 @@ const Navbar = () => {
         />
         
         {/* App Title */}
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
-          Notes App
+        <Typography variant="h4" component="div" sx={{ pr: 15, fontWeight: 'bold', flexGrow: 1, textAlign: 'center', color: '#000000', cursor: 'pointer'}} onClick={handleClick}>
+          Notes App   
         </Typography>
         
         {/* Profile Icon and Sign In Button */}
-        <Box>
+        <Box sx={{ color: '#343d3d'}}>
           <IconButton size="large" edge="end" color="inherit">
             <AccountCircle fontSize="large" />
           </IconButton>
