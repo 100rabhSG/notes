@@ -13,6 +13,8 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+import { signInWithGooglePopup } from '../../firebase-config';
+
 const defaultTheme = createTheme();
 
 export default function SignIn() {
@@ -25,6 +27,11 @@ export default function SignIn() {
       password: data.get('password'),
     });
   };
+
+  const handleGoogleLogin = async() => {
+    const respone = await signInWithGooglePopup();
+    console.log(respone);
+  }
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -76,6 +83,15 @@ export default function SignIn() {
               sx={{ mt: 3, mb: 2 }}
             >
               Sign In
+            </Button>
+            <Button
+              fullWidth
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
+              color='error'
+              onClick={handleGoogleLogin}
+            >
+              Sign In with Google
             </Button>
             <Grid container>
               <Grid item xs>
